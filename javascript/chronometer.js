@@ -19,7 +19,13 @@ class Chronometer {
     
   }
   twoDigitsNumber() {
+    let minutes = this.getMinutes();
+    let seconds = this.getSeconds();
 
+    minutes = minutes <  10  ? "0" + minutes : minutes.toString();
+    seconds = seconds <  10  ? "0" + seconds : seconds.toString();
+
+    return minutes, seconds;
   }
   stopClick() {
     // ... your code goes here
@@ -33,6 +39,6 @@ class Chronometer {
 }
 
 const test = new Chronometer 
-test.currentTime = 500
+test.currentTime = 301
 test.getSeconds 
-console.log(typeof test.getSeconds());
+console.log(test.twoDigitsNumber());
