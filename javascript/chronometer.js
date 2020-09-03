@@ -18,14 +18,11 @@ class Chronometer {
     return this.currentTime - seconds;
     
   }
-  twoDigitsNumber() {
-    let minutes = this.getMinutes();
-    let seconds = this.getSeconds();
+  twoDigitsNumber(number) {
+    
+    number = number <  10  ? "0" + number : number.toString();
 
-    minutes = minutes <  10  ? "0" + minutes : minutes.toString();
-    seconds = seconds <  10  ? "0" + seconds : seconds.toString();
-
-    return minutes, seconds;
+    return number;
   }
   stopClick() {
     // ... your code goes here
@@ -35,6 +32,8 @@ class Chronometer {
   }
   splitClick() {
     // ... your code goes here
+    const time = this.twoDigitsNumber();
+    console.log(time);
   }
 }
 
@@ -42,3 +41,4 @@ const test = new Chronometer
 test.currentTime = 301
 test.getSeconds 
 console.log(test.twoDigitsNumber());
+console.log(test.splitClick());
